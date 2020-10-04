@@ -1,0 +1,16 @@
+#!/bin/bash
+
+if  [$1 == ""]
+then
+        echo "Bem vindo ao snortdomain, sua ferramenta de parsing"
+        echo "Exemplo de uso: $0 dominio.com.br"
+else
+        wget -q $1
+        cat index.html | grep "href" | grep "http" | cut -d "/" -f 3 | cut -d >
+        rm index.html
+        for i in $(cat lista)
+        do
+                host $i | sort -u | grep "has address"
+        done
+        rm lista
+fi
